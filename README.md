@@ -1,2 +1,3 @@
-# bot
-Proposta de desenvolvimento de chatbot em React. FS-49, Digital College Aldeota.
+# Chatbot
+
+- Desenvolvimento de chatbot em React. FS-49, Digital College Aldeota.
