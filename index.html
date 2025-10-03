@@ -42,16 +42,6 @@
             };
 
             function ChatMessage({ message, sender }) {
-
-                // if(sender === 'robot'){
-                //     return (
-                //         <div>
-                //             <img src="./assets/robot.png" width="50"/>
-                //             {message}
-                //         </div>
-                //     )
-                // }
-
                 return (
                     <div>
                         {sender === 'robot' && (
@@ -65,8 +55,7 @@
                 );
             };
 
-            function App() {
-
+            function ChatMessages() {
                 const chatMessages = [
                     {
                         message: 'Hello!',
@@ -87,20 +76,26 @@
                     }
                 ];
 
-                const chatMessagesComponents = chatMessages.map(chatMessage => {
-                    return (
-                        <ChatMessage
-                            message={chatMessage.message}
-                            sender={chatMessage.sender}
-                            key={chatMessage.id}
-                        />
-                    );
-                });
+                return (
+                    <>
+                        {chatMessages.map(chatMessage => {
+                            return (
+                                <ChatMessage
+                                    message={chatMessage.message}
+                                    sender={chatMessage.sender}
+                                    key={chatMessage.id}
+                                />
+                            );
+                        })}
+                    </>
+                );
+            };
 
+            function App() {
                 return (
                     <>
                         <ChatInput />
-                        {chatMessagesComponents}
+                        <ChatMessages/>
                     </>
                 );
             };
